@@ -70,5 +70,5 @@ variable "namespace" {
 variable "task_release" {
   type        = string
   description = "The release version of the tekton tasks"
-  default     = "V2.7.1"
+  default     = "v2.7.1"
 }

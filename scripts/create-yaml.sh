@@ -13,6 +13,7 @@ fi
 
 mkdir -p "${DEST_DIR}"
 
+echo "Downloading tekton resources release: https://github.com/IBM/ibm-garage-tekton-tasks/releases/download/${VERSION}/release.yaml"
 curl -Lso "${DEST_DIR}/tekton-resources.yaml" "https://github.com/IBM/ibm-garage-tekton-tasks/releases/download/${VERSION}/release.yaml"
 
 find "${DEST_DIR}" -name "*"

@@ -72,3 +72,9 @@ variable "task_release" {
   description = "The release version of the tekton tasks"
   default     = "v2.7.1"
 }
+
+variable "server_name" {
+  type        = string
+  description = "The cluster where the application will be provisioned"
+  default     = "default"
+}

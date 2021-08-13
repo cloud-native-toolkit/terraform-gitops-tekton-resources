@@ -24,7 +24,7 @@ if [[ ! -f "argocd/2-services/cluster/${SERVER_NAME}/base/${NAMESPACE}-${COMPONE
 fi
 
 echo "Printing argocd/2-services/cluster/${SERVER_NAME}/base/${NAMESPACE}-${COMPONENT_NAME}.yaml"
-cat argocd/2-services/cluster/${SERVER_NAME}/base/${NAMESPACE}-${COMPONENT_NAME}.yaml
+cat "argocd/2-services/cluster/${SERVER_NAME}/base/${NAMESPACE}-${COMPONENT_NAME}.yaml"
 
 if [[ ! -f "payload/2-services/namespace/${NAMESPACE}/${COMPONENT_NAME}/${COMPONENT_NAME}.yaml" ]]; then
   echo "Resource yaml not found - payload/2-services/namespace/${NAMESPACE}/${COMPONENT_NAME}/${COMPONENT_NAME}.yaml"
@@ -32,7 +32,7 @@ if [[ ! -f "payload/2-services/namespace/${NAMESPACE}/${COMPONENT_NAME}/${COMPON
 fi
 
 echo "Printing payload/2-services/namespace/${NAMESPACE}/${COMPONENT_NAME}/${COMPONENT_NAME}.yaml"
-cat payload/2-services/namespace/${NAMESPACE}/${COMPONENT_NAME}/${COMPONENT_NAME}.yaml
+ls -l "payload/2-services/namespace/${NAMESPACE}/${COMPONENT_NAME}"
 
 count=0
 until kubectl get namespace "${NAMESPACE}" 1> /dev/null 2> /dev/null || [[ $count -eq 20 ]]; do

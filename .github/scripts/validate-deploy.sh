@@ -18,13 +18,13 @@ cd .testrepo || exit 1
 
 find . -name "*"
 
-if [[ ! -f "argocd/2-services/cluster/${SERVER_NAME}/${NAMESPACE}-${COMPONENT_NAME}.yaml" ]]; then
-  echo "ArgoCD config missing - argocd/2-services/cluster/${SERVER_NAME}/${NAMESPACE}-${COMPONENT_NAME}.yaml"
+if [[ ! -f "argocd/2-services/cluster/${SERVER_NAME}/base/${NAMESPACE}-${COMPONENT_NAME}.yaml" ]]; then
+  echo "ArgoCD config missing - argocd/2-services/cluster/${SERVER_NAME}/base/${NAMESPACE}-${COMPONENT_NAME}.yaml"
   exit 1
 fi
 
-echo "Printing argocd/2-services/cluster/${SERVER_NAME}/${NAMESPACE}-${COMPONENT_NAME}.yaml"
-cat argocd/2-services/cluster/${SERVER_NAME}/${NAMESPACE}-${COMPONENT_NAME}.yaml
+echo "Printing argocd/2-services/cluster/${SERVER_NAME}/base/${NAMESPACE}-${COMPONENT_NAME}.yaml"
+cat argocd/2-services/cluster/${SERVER_NAME}/base/${NAMESPACE}-${COMPONENT_NAME}.yaml
 
 if [[ ! -f "payload/2-services/namespace/${NAMESPACE}/${COMPONENT_NAME}/${COMPONENT_NAME}.yaml" ]]; then
   echo "Resource yaml not found - payload/2-services/namespace/${NAMESPACE}/${COMPONENT_NAME}/${COMPONENT_NAME}.yaml"

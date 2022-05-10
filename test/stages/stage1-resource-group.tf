@@ -6,5 +6,6 @@ module "resource_group" {
   #provision           = false
 
   ## Added to fix build error
-  ibmcloud_api_key = ""
+  ibmcloud_api_key    = var.ibmcloud_api_key
+
 }

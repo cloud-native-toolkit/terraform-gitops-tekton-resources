@@ -91,3 +91,12 @@ variable "cluster_password" {
 variable "server_url" {
   type        = string
 }
+
+variable "bootstrap_prefix" {
+  type = string
+  default = ""
+}
+
+variable "kubeseal_namespace" {
+  default = "sealed-secrets"
+}

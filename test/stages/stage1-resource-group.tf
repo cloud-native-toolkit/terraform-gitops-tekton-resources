@@ -5,7 +5,7 @@ module "resource_group" {
   
   #provision           = false
 
-  ## Added to fix build error
+  ## Added to reflect the RG module change
   ibmcloud_api_key    = var.ibmcloud_api_key
 
 }

@@ -13,6 +13,11 @@ terraform {
       source = "hashicorp/external"
       version = "2.2.2"
     }
-  }
+
+    ibm = {
+      source = "IBM-Cloud/ibm"
+      version = "0.13"
+    }
+ }
 
 }

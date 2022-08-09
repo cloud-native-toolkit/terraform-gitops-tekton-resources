@@ -25,7 +25,7 @@ if [[ -n "${latest_release}" ]]; then
     echo "RELEASE=${latest_release}" >> "${OUTPUT_FILE}"
   fi
 
-  current_release=$(cat "${REPO_DIR}/variables.tf" | grep -A 3 'variable "revision"' | grep "default" | sed -E "s/ +default += \"(.*)\"/\1/g")
+  current_release=$(cat "${REPO_DIR}/variables.tf" | grep -A 3 'variable "task_release"' | grep "default" | sed -E "s/ +default += \"(.*)\"/\1/g")
 
   sed "s/${current_release}/${latest_release}/g" "${REPO_DIR}/variables.tf" > "${REPO_DIR}/variables.tf.bak" && \
       cp "${REPO_DIR}/variables.tf.bak" "${REPO_DIR}/variables.tf" && \

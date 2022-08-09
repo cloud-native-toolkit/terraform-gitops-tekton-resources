@@ -19,6 +19,10 @@ versions:
         refs:
           - source: github.com/cloud-native-toolkit/terraform-gitops-namespace.git
             version: ">= 1.0.0"
+      - id: buildah
+        refs:
+          - source: github.com/cloud-native-toolkit/terraform-gitops-buildah-unprivileged.git
+            version: ">= 1.0.0"
     variables:
       - name: gitops_config
         moduleRef:

@@ -8,7 +8,7 @@ DEST_DIR="$2"
 VERSION="$3"
 
 if [[ -z "${VERSION}" ]]; then
-  VERSION="v2.7.1"
+  VERSION="v3.0.0"
 fi
 
 mkdir -p "${DEST_DIR}"

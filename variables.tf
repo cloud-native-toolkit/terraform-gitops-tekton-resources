@@ -70,7 +70,7 @@ variable "namespace" {
 variable "task_release" {
   type        = string
   description = "The release version of the tekton tasks"
-  default     = "v3.0.0"
+  default     = "v3.0.3"
 }
 
 variable "server_name" {

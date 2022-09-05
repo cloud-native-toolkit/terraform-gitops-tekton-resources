@@ -31,7 +31,8 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.TOKEN }}
 
       - name: Create Pull Request
-        uses: peter-evans/create-pull-request@v3
+        id: cpr
+        uses: peter-evans/create-pull-request@v4
         with:
           title: "Updates ${{ steps.update-modules.outputs.git-slug }} to ${{ steps.update-modules.outputs.release }}"
           commit-message: "Updates ${{ steps.update-modules.outputs.git-slug }} to ${{ steps.update-modules.outputs.release }}"
@@ -39,5 +40,13 @@ jobs:
           signoff: true
           branch: patch
           delete-branch: true
-          labels: chore,patch,automerge
+          labels: chore,patch
           reviewers: ${{ secrets.ASSIGNEES }}
+
+      - name: Enable Pull Request Automerge
+        if: steps.cpr.outputs.pull-request-operation == 'created'
+        uses: peter-evans/enable-pull-request-automerge@v2
+        with:
+          token: ${{ secrets.TOKEN }}
+          pull-request-number: ${{ steps.cpr.outputs.pull-request-number }}
+          merge-method: squash
